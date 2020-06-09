@@ -8,17 +8,19 @@ import routes from "./routes";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
+import passport from "passport";
+import "./passport";
 
 const app = express();
 
-app.use("/static", express.static("static"));
-app.use(cookieParser());
-app.set("view engine", "pug");
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(morgan("dev"));
 app.use(helmet());
-app.use("/uploads", express.static("uploads"));
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(morgan("dev"));
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(localsMiddleware);
 
 
