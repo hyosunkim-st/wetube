@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import { localsMiddleware } from "./middlewares";
 import routes from "./routes";
+import session from "express-session";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
@@ -13,11 +14,16 @@ import "./passport";
 
 const app = express();
 
+console.log(process.env.COOKIE_SECRET);
+
 app.use(helmet());
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
+app.use(session({
+    secret: process.env.COOKIE_SECRET
+}))
 app.use(passport.initialize());
 app.use(passport.session());
 
