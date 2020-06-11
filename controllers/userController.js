@@ -40,12 +40,13 @@ export const getLogin = (req, res) =>
     successRedirect: routes.home 
   });
 
-export const githubLogin =
-
-export const githubLoginCallback = (accessToken, refreshToken, profile, cb) => {
-  console.log(accessToken, refreshToken, profile, cb);
-};
-
+  export const githubLoginCallback = (accessToken, refreshToken, profile, cb) => {
+    console.log(accessToken, refreshToken, profile, cb);
+  };
+  
+  
+  
+  
 export const logout = (req, res) => {
   req.logout();
   res.redirect(routes.home);
