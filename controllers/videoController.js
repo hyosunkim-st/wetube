@@ -1,5 +1,5 @@
-import routes from "../routes";
-import Video from "../models/Video";
+import routes from "../routes.js";
+import Video from "../models/Video.js";
 
 // Home
 
@@ -7,9 +7,11 @@ export const home = async (req, res) => {
   try {
     const videos = await Video.find({}).sort({ _id: -1 });
     res.render("home", { pageTitle: "Home", videos });
+    
   } catch (error) {
     console.log(error);
     res.render("home", { pageTitle: "Home", videos: [] });
+    
   }
 };
 
@@ -40,6 +42,7 @@ export const search = async (req, res) => {
 
 export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
+
 
 export const postUpload = async (req, res) => {
   const {

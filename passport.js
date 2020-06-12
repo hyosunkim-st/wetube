@@ -1,8 +1,9 @@
 import passport from "passport";
-import GithubStrategy from "passport-guthub";
-import User from "./models/User";
-import { githubLoginCallback } from "./controllers/userController";
-import routes from "./routes";
+import GithubStrategy from "passport-github";
+import KakaoStrategy from "passport-kakao";
+import User from "./models/User.js";
+import { githubLoginCallback } from "./controllers/userController.js";
+import routes from "./routes.js";
 
 passport.use(User.createStrategy());
 
