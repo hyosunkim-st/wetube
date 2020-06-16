@@ -1,11 +1,11 @@
 import express from "express";
-import routes from "../routes";
+import routes from "../routes.js";
 import {
   userDetail,
   editProfile,
   changePassword
-} from "../controllers/userController";
-import { onlyPrivate } from "../middlewares";
+} from "../controllers/userController.js";
+import { onlyPrivate } from "../middlewares.js";
 
 const userRouter = express.Router();
 

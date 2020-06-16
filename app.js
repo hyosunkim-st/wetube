@@ -3,17 +3,18 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-import { localsMiddleware } from "./middlewares";
-import routes from "./routes";
-import session from "express-session";
-import mongoose from "mongoose";
-import MongoStore from "connect-mongo"; 
-import userRouter from "./routers/userRouter";
-import videoRouter from "./routers/videoRouter";
-import globalRouter from "./routers/globalRouter";
 import passport from "passport";
+import mongoose from "mongoose";
+import session from "express-session";
+import MongoStore from "connect-mongo"; 
+import { localsMiddleware } from "./middlewares.js";
+import routes from "./routes.js";
+import userRouter from "./routers/userRouter.js";
+import videoRouter from "./routers/videoRouter.js";
+import globalRouter from "./routers/globalRouter.js";
+import apiRouter from "./routers/apiRouter.js";
 
-import "./passport";
+import "./passport.js";
 
 const app = express();
 
@@ -27,7 +28,6 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan("dev"));
-
 app.use
     (session({
     secret: process.env.COOKIE_SECRET,
@@ -44,5 +44,6 @@ app.use(localsMiddleware);
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
+app.use(routes.api, apiRouter);
 
 export default app;
