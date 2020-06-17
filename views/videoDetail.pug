@@ -1,5 +1,6 @@
 extends layouts/main
 include mixins/videoPlayer
+<<<<<<< HEAD
 
 <<<<<<< HEAD
     .video-detail__container
@@ -43,6 +44,24 @@ block content
                     li
                         span=comment.text 
 =======
+=======
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+block content
+    .video-detail__container
+        +videoPlayer({
+            src:video.fileUrl
+        })
+        .video__info
+            if loggedUser && video.creator.id === loggedUser.id
+            a(href=routes.editVideo(video.id))
+                button Edit video
+            h5.video__title=video.title
+            p.video__description=video.description
+            if video.views === 1
+                span.video__views 1 view
+>>>>>>> feature/#3/video
             else
                 span.video__views #{video.views} views
         .video__author
@@ -94,4 +113,7 @@ block content
                  span.video__comment-number #{video.comments.length} comments 
      
 >>>>>>> c39c480fc514d388b6ed570473c3f213b351da86
+<<<<<<< HEAD
+>>>>>>> feature/#3/video
+=======
 >>>>>>> feature/#3/video

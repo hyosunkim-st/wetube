@@ -6,7 +6,11 @@ const CommentSchema = new mongoose.Schema({
         required: "Text is required"
     },
 <<<<<<< HEAD
+<<<<<<< HEAD
     createdAt:{
+=======
+    createdAt: {
+>>>>>>> feature/#3/video
 =======
     createdAt: {
 >>>>>>> feature/#3/video

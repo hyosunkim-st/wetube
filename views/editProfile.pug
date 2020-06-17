@@ -1,5 +1,6 @@
 extends layouts/main
 <<<<<<< HEAD
+<<<<<<< HEAD
 block content
     .form-container
         form(action=routes.editVideo(video.id), method="post")
@@ -12,6 +13,8 @@ block content
         a.form-container__link(href=`/users${routes.changePassword}`)
             button Change Password 
 =======
+=======
+>>>>>>> feature/#3/video
 
 block content
     .form-container
@@ -21,5 +24,9 @@ block content
                 input(type="file", id="avatar", name="avatar" accept="images/*")
             input(type="text", placeholder="Name", name="name" value=loggedUser.name)
             input(type="email", placeholder="Email", name="email" value=loggedUser.email)
+<<<<<<< HEAD
+            input(type="submit", value="Update Profile")
+>>>>>>> feature/#3/video
+=======
             input(type="submit", value="Update Profile")
 >>>>>>> feature/#3/video

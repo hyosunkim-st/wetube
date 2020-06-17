@@ -1,5 +1,6 @@
 import passport from "passport";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import GithubStrategy from "passport-guthub";
 import User from "./models/User.js";
 import { githubLoginCallback } from "./controllers/userController.js";
@@ -18,6 +19,8 @@ passport.use(new GithubStrategy(
 );
 
 =======
+=======
+>>>>>>> feature/#3/video
 import GithubStrategy from "passport-github";
 import FacebookStrategy from "passport-facebook";
 
@@ -71,6 +74,9 @@ passport.use(
 import User from "./models/User";
 
 passport.use(User.createStrategy());
+<<<<<<< HEAD
+>>>>>>> feature/#3/video
+=======
 >>>>>>> feature/#3/video
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());

@@ -6,7 +6,10 @@ import "./models/Video.js";
 import "./models/Comment.js";
 import "./models/User.js";
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> feature/#3/video
 
 >>>>>>> feature/#3/video
 const PORT = process.env.PORT || 4000;
@@ -23,6 +26,10 @@ const handleListening = () => {
 =======
 const handleListening = () =>
 Console.log(`Listening on: http://localhost:${PORT}`);
+<<<<<<< HEAD
+=======
+
+>>>>>>> feature/#3/video
 
 
 app.listen(PORT, handleListening);

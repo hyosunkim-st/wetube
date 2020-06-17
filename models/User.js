@@ -7,9 +7,12 @@ const UserSchema = new mongoose.Schema({
   avatarUrl: String,
   facebookId: Number,
 <<<<<<< HEAD
+<<<<<<< HEAD
   githubId: Number
 });
 =======
+=======
+>>>>>>> feature/#3/video
   githubId: Number,
   comments: [
     {
@@ -26,6 +29,9 @@ const UserSchema = new mongoose.Schema({
   ]
 });
 
+<<<<<<< HEAD
+>>>>>>> feature/#3/video
+=======
 >>>>>>> feature/#3/video
 UserSchema.plugin(passportLocalMongoose, { usernameField: "email" });
 const model = mongoose.model("User", UserSchema);

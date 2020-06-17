@@ -85,14 +85,12 @@ function goFullScreen() {
     }
     return `${hours}:${minutes}:${totalSeconds}`;
   };
-
 function getCurrentTime() {
     currentTime.innerHTML = formatDate(Math.floor(videoPlayer.currentTime));
   }
 function setTotalTime() {
     const totalTimeString = formatDate(videoPlayer.duration);
     totalTime.innerHTML = totalTimeString;
-
 
     setInterval(getCurrentTime, 1000);
   }
@@ -102,7 +100,6 @@ function setTotalTime() {
   }
 
   function handleDrag(event) {
-
     const {
     target: { value }
     } = event;
@@ -116,7 +113,6 @@ function setTotalTime() {
     volumeBtn.innerHTML = '<i class="fas fa-volume-off"></i>';
     }
   }
-
 function init() {
 videoPlayer.volume = 0.5;
 playBtn.addEventListener("click", handlePlayClick);

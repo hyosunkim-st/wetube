@@ -14,6 +14,7 @@ const videoRouter = express.Router();
 
 videoRouter.get(routes.upload, onlyPrivate, getUpload);
 <<<<<<< HEAD
+<<<<<<< HEAD
 videoRouter.post(routes.upload, onlyPrivate, uploadVideo, postUpload);
 videoRouter.get(routes.videoDetail(), videoDetail);
 // Edit Video
@@ -35,12 +36,28 @@ videoRouter.get(routes.upload, getUpload);
 videoRouter.get(routes.upload, uploadVideo, postUpload);
 
 videoRouter.get(routes.videoDetail(), videoDetail);
+=======
+videoRouter.get(routes.upload, onlyPrivate, uploadVideo, postUpload);
+
+videoRouter.get(routes.videoDetail(), videoDetail);
+
+videoRouter.get(routes.editVideo(), onlyPrivate, getEditVideo);
+videoRouter.post(routes.editVideo(), onlyPrivate, postEditVideo);
+
+videoRouter.get(routes.deleteVideo(), onlyPrivate, deleteVideo);
+
+videoRouter.get(routes.upload, getUpload);
+videoRouter.get(routes.upload, uploadVideo, postUpload);
+
+videoRouter.get(routes.videoDetail(), videoDetail);
+>>>>>>> feature/#3/video
 
 videoRouter.get(routes.editVideo(), getEditVideo);
 videoRouter.post(routes.editVideo(),postEditVideo);
 
 videoRouter.get(routes.deleteVideo(), deleteVideo);
 >>>>>>> feature/#3/video
+
 
 
 export default videoRouter;

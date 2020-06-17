@@ -6,7 +6,6 @@ import bodyParser from "body-parser";
 import passport from "passport";
 import mongoose from "mongoose";
 import session from "express-session";
-
 import MongoStore from "connect-mongo";
 import { localMiddleware } from "./middlewares.js";
 import routes from "./routes.js";
@@ -44,6 +43,7 @@ app.use(passport.session());
 
 app.use(localMiddleware);
 
+app.use(localMiddleware);
 
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter);
