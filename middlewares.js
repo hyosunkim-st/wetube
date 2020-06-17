@@ -1,5 +1,5 @@
 import multer from "multer";
-import routes from "./routes";
+import routes from "./routes.js";
 
 const multerVideo = multer({ dest: "uploads/videos/" });
 const multerAvatar = multer({ dest: "uploads/avatars/" });

@@ -1,7 +1,12 @@
 import passport from "passport";
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import GithubStrategy from "passport-guthub";
+=======
+import GithubStrategy from "passport-github";
+import KakaoStrategy from "passport-kakao";
+>>>>>>> origin/develop
 import User from "./models/User.js";
 import { githubLoginCallback } from "./controllers/userController.js";
 import routes from "./routes.js";

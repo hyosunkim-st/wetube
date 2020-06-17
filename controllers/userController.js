@@ -4,6 +4,7 @@ import User from "../models/User.js";
 
 export const getJoin = (req, res) => {
   res.render("join", { pageTitle: "Join" });
+
 };
 
 export const postJoin = async (req, res, next) => {
@@ -13,6 +14,7 @@ export const postJoin = async (req, res, next) => {
   if (password !== password2) {
     res.status(400);
     res.render("join", { pageTitle: "Join" });
+   
   } else {
  
     try {
@@ -32,6 +34,7 @@ export const postJoin = async (req, res, next) => {
 
 export const getLogin = (req, res) =>
   res.render("login", { pageTitle: "Log In" });
+
 
   export const postLogin = passport.authenticate("local", {
     failureRedirect: routes.login,
@@ -74,6 +77,7 @@ export const logout = (req, res) => {
 
 export const getMe = (req, res) => {
   res.render("userDetail", { pageTitle: "User Detail", user: req.user });
+
 };
 
 export const userDetail = async (req, res) => {
@@ -83,6 +87,7 @@ export const userDetail = async (req, res) => {
   try {
     const user = await User.findById(id);
     res.render("userDetail", { pageTitle: "User Detail", user });
+   
   } catch (error) {
     res.redirect(routes.home);
   }
@@ -90,5 +95,6 @@ export const userDetail = async (req, res) => {
 
 export const editProfile = (req, res) =>
   res.render("editProfile", { pageTitle: "Edit Profile" });
+
 export const changePassword = (req, res) =>
   res.render("changePassword", { pageTitle: "Change Password" });

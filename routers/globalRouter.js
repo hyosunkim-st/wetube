@@ -2,8 +2,8 @@
 <<<<<<< HEAD
 import express from "express";
 import passport from "passport";
-import routes from "../routes";
-import { home, search } from "../controllers/videoController";
+import routes from "../routes.js";
+import { home, search } from "../controllers/videoController.js";
 import {
   getJoin,
   getLogin,
@@ -13,8 +13,9 @@ import {
   githubLogin,
   postGithubLogIn,
   getMe
-} from "../controllers/userController";
+} from "../controllers/userController.js";
 
+<<<<<<< HEAD
 import { onlyPublic, onlyPrivate } from "../middlewares";
 =======
 =======
@@ -42,6 +43,9 @@ import { onlyPrivate, onlyPublic } from "../middlewares";
 >>>>>>> feature/#3/video
 =======
 >>>>>>> feature/#3/video
+=======
+import { onlyPublic, onlyPrivate } from "../middlewares.js";
+>>>>>>> origin/develop
 
 const globalRouter = express.Router();
 
@@ -66,6 +70,7 @@ globalRouter.get(routes.logout, onlyPrivate, logout);
 globalRouter.get(routes.gitHub, githubLogin);
 globalRouter.get(
   routes.githubCallback,
+<<<<<<< HEAD
   passport.authenticate("github", { failureRedirect: "/login" }),
 =======
 =======
@@ -81,6 +86,9 @@ globalRouter.get(
 >>>>>>> feature/#3/video
 =======
 >>>>>>> feature/#3/video
+=======
+  passport.authenticate("github", { failureRedirect: "/login.js" }),
+>>>>>>> origin/develop
   postGithubLogIn
 );
 
