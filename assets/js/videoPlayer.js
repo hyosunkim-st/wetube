@@ -7,6 +7,7 @@ const currentTime = document.getElementById("currentTime");
 const totalTime = document.getElementById("totalTime");
 const volumeRange = document.getElementById("jsVolume");
 
+
 const registerView = () => {
     const videoId = window.location.href.split("/videos/")[1];
     fetch(`/api/${videoId}/view`, {
@@ -15,6 +16,7 @@ const registerView = () => {
   };
   
 function handlePlayClick() {
+
   if (videoPlayer.paused) {
     videoPlayer.play();
     playBtn.innerHTML = '<i class="fas fa-pause"></i>';
@@ -49,7 +51,7 @@ function exitFullScreen() {
         document.msExitFullscreen();
       }
   }
-
+  
 function goFullScreen() {
     if (videoContainer.requestFullscreen) {
         videoContainer.requestFullscreen();
@@ -61,13 +63,13 @@ function goFullScreen() {
         videoContainer.msRequestFullscreen();
       }
 
+
     fullScrnBtn.innerHTML = '<i class="fas fa-compress"></i>';
     fullScrnBtn.removeEventListener("click", goFullScreen);
     fullScrnBtn.addEventListener("click", exitFullScreen);
   }
-
-const formatDate = seconds => {
-    const secondsNumber = parseInt(seconds, 10);
+  const formatDate = seconds => {
+  const secondsNumber = parseInt(seconds, 10);
     let hours = Math.floor(secondsNumber / 3600);
     let minutes = Math.floor((secondsNumber - hours * 3600) / 60);
     let totalSeconds = secondsNumber - hours * 3600 - minutes * 60;
@@ -90,15 +92,17 @@ function getCurrentTime() {
 function setTotalTime() {
     const totalTimeString = formatDate(videoPlayer.duration);
     totalTime.innerHTML = totalTimeString;
+
+
     setInterval(getCurrentTime, 1000);
   }
-function handleEnded() {
-    registerView();
+  function handleEnded() {
     videoPlayer.currentTime = 0;
     playBtn.innerHTML = '<i class="fas fa-play"></i>';
-
   }
-function handleDrag(event) {
+
+  function handleDrag(event) {
+
     const {
     target: { value }
     } = event;

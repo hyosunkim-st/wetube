@@ -1,17 +1,15 @@
 import passport from "passport";
 import routes from "../routes.js";
-import User from "../models/Use.js";
+import User from "../models/User.js";
 
 export const getJoin = (req, res) => {
   res.render("join", { pageTitle: "Join" });
 };
 
-
 export const postJoin = async (req, res, next) => {
   const {
     body: { name, email, password, password2 }
   } = req;
-
   if (password !== password2) {
     res.status(400);
     res.render("join", { pageTitle: "Join" });
@@ -58,7 +56,7 @@ export const githubLoginCallback = async (_, __, profile, cb) => {
       githubId: id,
       avatarUrl
     });
-    return cb(null, newUser);
+    return cb(null, newUser); 
   } catch (error) {
     return cb(error);
   };

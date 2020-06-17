@@ -14,7 +14,15 @@ export const home = async (req, res) => {
   }
 };
 
-// Search
+export const home = async(req, res) => {
+try {
+const videos = await Video.find({}).sort({ _id: -1 });
+res.render("home", { pageTitle: "Home", videos });
+} catch(error) {
+console.log(error);
+res.render("home", { pageTitle: "Home", videos: [] });
+}
+};
 
 export const search = async (req, res) => {
 
@@ -36,8 +44,6 @@ export const search = async (req, res) => {
   }
   res.render("search", { pageTitle: "Search", searchingBy, videos });
 };
-
-// Upload
 
 export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });

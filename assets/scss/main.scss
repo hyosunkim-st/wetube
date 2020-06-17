@@ -5,8 +5,12 @@ body {
 body {
   background-color: #f5f5f5;
   color: $black;
+<<<<<<< HEAD
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+=======
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+>>>>>>> feature/#3/video
   font-size: 14px;
 }
 
@@ -31,7 +35,10 @@ textarea,
   background-color: white;
   max-width: 320px;
   resize: none;
+<<<<<<< HEAD
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+=======
+>>>>>>> feature/#3/video
   &::placeholder {
     font-weight: 300;
     color: rgba(0, 0, 0, 0.7);
@@ -42,9 +49,17 @@ button {
   background-color: #3498db;
   color: white;
 }
+<<<<<<< HEAD
 button.delete {
   background-color: $dark-red;
 }
+=======
+ 
+button.delete {
+  background-color: $dark-red;
+}
+ 
+>>>>>>> feature/#3/video
 button,
 input[type="submit"] {
   cursor: pointer;

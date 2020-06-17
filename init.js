@@ -5,10 +5,25 @@ dotenv.config();
 import "./models/Video.js";
 import "./models/Comment.js";
 import "./models/User.js";
-const PORT = process.env.PORT || 4000;
+<<<<<<< HEAD
+=======
 
+>>>>>>> feature/#3/video
+const PORT = process.env.PORT || 4000;
+const handleListening = () => {
+console.log(`✅ Listening on: http://localhost:${PORT}`)
+};
+
+<<<<<<< HEAD
 const handleListening = () => {
     console.log(`✅ Listening on: http://localhost:${PORT}`)
   };
   
   app.listen(PORT, handleListening);
+=======
+const handleListening = () =>
+Console.log(`Listening on: http://localhost:${PORT}`);
+
+
+app.listen(PORT, handleListening);
+>>>>>>> feature/#3/video
